@@ -14,7 +14,7 @@ public class ATM extends Account {
         this.account = account;
     }
     
-    public menu() {
+    public static void menu() {
         
     }
 }
