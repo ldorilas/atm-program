@@ -1,4 +1,6 @@
+import java.util.Scanner;
 public class User {
+	Scanner in = new Scanner(System.in);
 	private int pin;
 	private int phone;
 	private String name;
@@ -13,10 +15,6 @@ public class User {
 	    this.birthdate = birthdate;
 	    this.ssn = ssn;
 	    this.address = address;
-	}
-	
-	public int getPin() {
-	    return pin;
 	}
 	
 	public int getPhone() {
@@ -40,26 +38,37 @@ public class User {
 	}
 	
 	public int setPin() {
-	    this.pin = pin;
+	    System.out.println("Enter pin: ");
+	    pin = in.nextInt();
+	    while (Integer.toString(pin).length() == 4) {
+	    	if (Integer.toString(pin).length() != 4) {
+	    		System.out.println("Pin must be 4 digits.");
+	    	}
+	    	else if (Integer.toString(pin).length() == 0) {
+		    	System.out.println("Enter a pin number.");
+		    }
+	    }
+	    return pin;
 	}
 	
-	public int setPhone() {
+	public void setPhone() {
 	    this.phone = phone;
 	}
 	
-	public String setName() {
-	    this.name = name;
+	public void setName() {
+		System.out.println("Enter name: ");
+		name = in.nextLine();
 	}
 	
-	public String setBirthdate() {
+	public void setBirthdate() {
 	    this.birthdate = birthdate;
 	}
 	
-	public int setSsn() {
+	public void setSsn() {
 	    this.ssn = ssn;
 	}
 	
-	public String setAddress() {
+	public void setAddress() {
 	    this.address = address;
 	}
 }
