@@ -1,16 +1,14 @@
 public class Account extends User {
     private float balance;
     private long accountNumber;
-    private User user;
     private String accountOwner;
     private double withdraw;
     private double deposit;
     
-    public Account (float balance, long accountNumber, User user, String accountOwner, double withdraw, double deposit, int pin, int phone, String birthdate, String address) {
+    public Account (float balance, long accountNumber, String accountOwner, double withdraw, double deposit, int pin, int phone, String birthdate, String address) {
         super(pin, phone, birthdate, address);
         this.balance = balance;
         this.accountNumber = accountNumber;
-        this.user = user;
         this.withdraw = withdraw;
         this.deposit = deposit;
     }
@@ -35,27 +33,27 @@ public class Account extends User {
         return deposit;
     }
     
-    public float setBalance() {
+    public void setBalance() {
         this.balance = balance;
     }
     
-    public long setAccountNumber() {
+    public void setAccountNumber() {
         this.accountNumber = accountNumber;
     }
     
-    public String setAccountOwner() {
-        this.accountOwner = accountNumber;
+    public void setAccountOwner() {
+        this.accountOwner = accountOwner;
     }
     
-    public double setWithdraw() {
+    public void setWithdraw() {
         this.withdraw = withdraw;
     }
     
-    public double setDeposit() {
+    public void setDeposit() {
         this.deposit = deposit;
     }
     
-    public void deposit(double amount) {
+    public float deposit(double amount) {
         if (amount <= 0) {
             return 0;
         }
@@ -66,7 +64,7 @@ public class Account extends User {
         }
     }
     
-    public void withdraw(double amount) {
+    public float withdraw(double amount) {
         if (amount > balance) {
             return 0;
         }
