@@ -1,20 +1,42 @@
 import java.util.Scanner;
 public class ATM extends Account {
-    private Scanner input;
-    private Account account;
+    private Scanner in;
     
-    Scanner input = new Scanner(System.input);
-    public static void main(String[] args) {
-        ATM atm = new ATM();
-        
+    public ATM(float balance, long accountNumber, int pin, int phoneNum, String name, int ssn, String birthdate, String address, double deposit, double withdraw) {
+        super(balance, accountNumber, deposit, withdraw, pin, phone, ssn, birthdate, address);
     }
     
-    public ATM(Account account, float balance, long accountNumber, String accountOwner, double deposit, double withdraw) {
-        super(balance, accountNumber, accountOwner, deposit, withdraw);
-        this.account = account;
+    Scanner in = new Scanner(System.in);
+    public static void main(String[] args) {
+        menu();
+        in.close();
     }
     
     public static void menu() {
-        
+        User.getName();
+        System.out.println("Hello, " + User.getName() + "."\n"Press d to deposit, w to withdraw, b to show balance, and e to exit your account.")
+        char option = in.nextChar();
+            if (Account.setAccountNumber() == true) {
+            User.getPin();
+            if (User.getPin() == true) {
+                if (option = 'd') {
+                    Account.setDeposit();
+                }
+                else if (option = 'w') {
+                    Account.setWithdraw();
+                }
+                else if (option = 'b') {
+                    Account.setBalance();
+                }
+                else if (option = 'e') {
+                    System.out.println("Thank you, " + User.getName() + ", and have a good day.");
+                }
+                else {
+                    System.out.println("Not valid command.");
+                }
+            }
+            else {
+                System.out.println("Enter valid pin.");
+        }
     }
 }
