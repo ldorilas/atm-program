@@ -18,25 +18,27 @@ public class ATM extends Account {
         char option = in.nextChar();
             if (Account.setAccountNumber() == true) {
             User.getPin();
-            if (User.getPin() == true) {
-                if (option = 'd') {
-                    Account.setDeposit();
+            While (option != 'e') {
+                if (User.getPin() == true) {
+                    if (option = 'd') {
+                        Account.setDeposit();
+                    }
+                    else if (option = 'w') {
+                        Account.setWithdraw();
+                    }
+                    else if (option = 'b') {
+                        Account.setBalance();
+                    }
+                    else {
+                        System.out.println("Not valid command.");
+                    }
                 }
-                else if (option = 'w') {
-                    Account.setWithdraw();
-                }
-                else if (option = 'b') {
-                    Account.setBalance();
-                }
-                else if (option = 'e') {
-                    System.out.println("Thank you, " + User.getName() + ", and have a good day.");
+                if (option == 'e') {
+                    System.out.println("Thank you and have a good day, " + User.getName());
                 }
                 else {
-                    System.out.println("Not valid command.");
+                System.out.println("Enter correct pin.");
                 }
-            }
-            else {
-                System.out.println("Enter valid pin.");
+            }        
         }
     }
-}
