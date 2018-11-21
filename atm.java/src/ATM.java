@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class ATM extends Account {
     private Scanner in;
     
-    public ATM(float balance, long accountNumber, int pin, int phoneNum, String name, int ssn, String birthdate, String address, double deposit, double withdraw) {
+    public ATM(float balance, long accountNumber, int pin, int phone, String name, int ssn, String birthdate, String address, double deposit, double withdraw) {
         super(balance, accountNumber, deposit, withdraw, pin, phone, ssn, birthdate, address);
     }
     
